@@ -13,6 +13,7 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 
 // Configuration
 dotenv.config();
+console.log("MONGO URI:", process.env.MONGO_URI);
 connectDB();
 
 const app = express();
@@ -22,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 7000;
 
 // Routes
 app.use("/api/v1/users", userRoutes);
